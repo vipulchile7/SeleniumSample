@@ -1,0 +1,40 @@
+WebDriver driver = new ChromeDriver();
+		driver.get("http://the-internet.herokuapp.com/login");
+//		driver.findElement(By.id("username")).sendKeys("tomsmith");
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tomsmith");
+		//input[@name='username']
+		//input[@id='username']
+		driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+//		driver.findElement(By.className("radius")).click();
+//		driver.findElement(By.className("fa fa-2x fa-sign-in")).click();
+		driver.findElement(By.cssSelector(".fa.fa-2x.fa-sign-in")).click();
+//		driver.findElement(By.linkText("Elemental Selenium")).click();
+		driver.findElement(By.partialLinkText("Elemental")).click();
+		//4.8
+//		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("--remote-allow-origins=*");
+//		WebDriver driver = new ChromeDriver(options);
+		
+		//4.10
+		WebDriver driver = new ChromeDriver();
+//		driver.get("https://www.google.com/");
+		driver.navigate().to("https://www.google.com/");
+		
+//		WebElement schBox = driver.findElement(By.name("q"));
+//		WebElement schBox = driver.findElement(By.id("APjFqb"));
+		
+//		WebElement schBox = driver.findElement(By.className("gLFyf"));
+		WebElement schBox = driver.findElement(By.tagName("textarea"));
+		schBox.sendKeys("Java Tutorial");
+		
+//		schBox.sendKeys(Keys.ENTER);
+		schBox.submit();
+		System.out.println("Page title : " + driver.getTitle());
+		System.out.println("Current url  : "+driver.getCurrentUrl());
+		driver.navigate().back();
+		//wait commands
+		System.out.println("Page title : " + driver.getTitle());
+		driver.navigate().forward();
+//		driver.getPageSource();
+		
+	}

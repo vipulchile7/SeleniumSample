@@ -11,6 +11,6 @@ public class SeleniumSample {
 		driver.get("https://www.google.com/");
 		
 		driver.close();
+		
 	}
-
 }
